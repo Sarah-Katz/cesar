@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Chiffrage de césar</title>
+</head>
+
+<body class="hero is-fullheight has-background-dark">
+    <div class="columns is-centered mt-6">
+        <div class="column is-half has-text-centered has-background-primary">
+            <h1 class="title has-text-black">Chiffrage de césar</h1>
+            <div class="content has-text-justified has-text-weight-semibold p-2">
+                <p>Ce code réalise une version informatique du chiffrement de César, une technique ancienne pour rendre
+                    les messages
+                    secrets. Il utilise des boutons pour "Encoder" et "Décoder", des champs de texte en entrée et
+                    sortie, et un champ pour
+                    le mot de passe. <br> <br>
+
+                    Lorsque tu appuies sur "Encoder", les lettres du message avancent dans l'alphabet selon une clé
+                    numérique générée à
+                    partir du mot de passe. Quand tu appuies sur "Décoder", les lettres reculent pour révéler le message
+                    original. <br> <br>
+
+                    La clé numérique est calculée en additionnant les valeurs numériques des lettres du mot de passe.
+                    Pour chaque lettre du
+                    texte, sa valeur numérique est modifiée selon la clé pour obtenir le message chiffré ou déchiffré.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="errorPopup" class="columns is-centered p-3" style="display: none;">
+        <div class="notification column is-4 has-background-danger has-text-white">
+            <button id="errorBtn" class="delete"></button>
+            <p class="title is-4">Erreur</p>
+            <p id="errorText" class="subtitle is-6">Texte d'erreur</p>
+        </div>
+    </div>
+
+
+    <div class="columns is-centered mb-6">
+        <form class="column is-half has-background-primary">
+            <div class="content has-text-centered has-text-weight-bold">
+                <p>Entrez un texte en entrée puis un mot de passe <br>
+                    Cliquez sur Encoder ou Decoder pour obtenir le résultat</p>
+            </div>
+            <div class="buttons is-centered mt-5">
+                <a id="encode" class="button is-info mr-5">Encoder</a>
+                <a id="decode" class="button is-danger ml-5">Décoder</a>
+            </div>
+
+            <label for="textInput" class="label">Texte d'entrée</label>
+            <textarea class="textarea" id="textInput"></textarea>
+
+            <label for="key" class="label">Mot de passe</label>
+            <input class="input" id="key" type="text">
+
+            <label for="textOutput" class="label">Texte de sortie</label>
+            <textarea class="textarea" id="textOutput" disabled></textarea>
+        </form>
+    </div>
+
+    <script defer src="cesar.js"></script>
+</body>
+
+</html>
