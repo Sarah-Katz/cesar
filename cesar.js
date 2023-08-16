@@ -43,8 +43,9 @@ decodeBtn.addEventListener("click", () => {
 function generateKey() {
     let keyNum = 0;
     for (let i = 0; i < keyField.value.length; i++) {  // For each character in the password
-        keyNum += keyField.value.charCodeAt(i);        // Add the character's value to the keyNum
+        keyNum += (keyField.value.charCodeAt(i) * i);        // Add the character's value to the keyNum
     }
+    console.log(keyNum);
     return keyNum;
 }
 
